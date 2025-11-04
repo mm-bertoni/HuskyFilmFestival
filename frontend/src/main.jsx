@@ -1,15 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+//import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+// Bootstrap React for a Navbar
 
-function App(){
-  return (
-    <h1>Hello from Margaret!</h1>
-  ) ;
-}
+//import FilmForm from "./components/filmForm";
 
-createRoot(document.getElementById('root')).render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+   
+  </StrictMode>
+);
