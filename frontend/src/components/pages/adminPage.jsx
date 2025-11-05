@@ -20,15 +20,6 @@ root.render(
     <Container>
       <LoginAdmin/>
     </Container>
-    {/*
-    <Container>
-      <h1>Husky Film Festival Admin Portal</h1>
-       
-    </Container>  
-    <Container>
-        <AdminForm/>
-    </Container>
-     */}
     
     
   </StrictMode>
