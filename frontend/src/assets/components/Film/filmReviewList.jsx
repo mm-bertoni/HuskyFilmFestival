@@ -1,3 +1,4 @@
+
 import {useState, useEffect} from "react";
 import Container from 'react-bootstrap/Container';
 
@@ -5,8 +6,8 @@ import Film from './filmToReview';
 
 export default function FilmReviewList(){
     const [films, setFilms] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-     
 
     useEffect(()=>{
         const reloadFilms = async () => {
@@ -14,25 +15,26 @@ export default function FilmReviewList(){
         console.log("What is res gettting", res);
         if(!res.ok){
             console.error("Failed to fetch films", res.status);
+            setLoading(false);
             return;
 
         } 
             const data = await res.json();
-            console.log("Fetched Data: ", data);
-            console.log("Type of data: ", typeof data);
-           
-            setFilms(data);
+            console.log("Full data received:", data);
+            setFilms(data.films || []); // Defaults to empty array if issue
+            setLoading(false);
+
+
         };
         reloadFilms();
-        return () => {
-            console.log("Fetching effect cleanup")
-        }
+
     },[]);
     
     
     function renderFilm(film){
         return (
             <Film 
+            key = {film.id}
             director={film.director}
             title={film.title}
             genre={film.genre}
@@ -43,16 +45,28 @@ export default function FilmReviewList(){
 
     }
     //useEffect(()=>{})
-    if(films.length===0){
-        return(
-            <Container>Loading films...</Container>
-        );
-    } else {
+    // Diagnostic log just before render to catch non-array types
+    console.log('films before render:', films, 'isArray:', Array.isArray(films), 'toString:', Object.prototype.toString.call(films));
+
+    if(loading){
         return(
             <Container>
-                {films.map(renderFilm)}
-            </Container>);
-            
+                <div>Loading Films...</div>
+            </Container>
+        );
     }
-    
+
+    if(!films || films.length === 0){
+        return(
+            <Container>
+                <div>No unreviewed films found</div>
+            </Container>
+        )
+    }
+    return(
+        <Container>
+            {films.map(renderFilm)}
+        </Container>
+    );
 }
+    

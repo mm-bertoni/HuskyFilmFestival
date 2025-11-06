@@ -5,9 +5,9 @@ import FilmsDB from "../FilmsDB.js";
 const router = express.Router();
 
 router.get("/films", async (req, res)=>{
-    // Try to get the films that are NOT reviewed later if time
+    // Try to get the films that are NOT reviewed
     try {
-        const films = await FilmsDB.getFilms();
+        const films = await FilmsDB.getFilms({status:null});
         res.json({
             films,
         });

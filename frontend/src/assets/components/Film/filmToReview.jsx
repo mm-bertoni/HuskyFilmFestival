@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import ReviewForm from '../Forms/reviewForm';
 
-export default function FilmToReview({ director, title, genre, screener, status}){
+export default function FilmToReview({director, title, genre, screener, status}){
     return(
         <>
             <Container>
@@ -10,26 +10,29 @@ export default function FilmToReview({ director, title, genre, screener, status}
                 </div>
                 <div>
                     <span>
-                        <h3>Director:</h3> 
-                        <p>{director}</p>
+                        <h2>Director:</h2> 
+                        <h3>{director}</h3>
                     </span>
                     <span>
-                        <h3>Genre:</h3> 
-                        <p>{genre}</p>
+                        <h2>Genre:</h2> 
+                        <h3>{genre}</h3>
                     </span>
     
                     <span>
-                        <h3>Screener Website:</h3> 
-                        <p>{screener}</p>
+                        <h2>Screener Website:</h2> 
+                        <h3>{screener}</h3>
                     </span>
                     <span>
-                        <h3>Selection Status:</h3> 
-                        <p>{status}</p>
+                        <h2>Selection Status:</h2> 
+                        <h3>{status}</h3>
                     </span>
                 </div>
-                <div>
-                    <ReviewForm/>
-                </div>
+                
+            </Container>
+            <Container>
+             
+                <ReviewForm/>
+               
             </Container>
         </>
 

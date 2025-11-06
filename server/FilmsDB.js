@@ -4,16 +4,17 @@ import { MongoClient } from "mongodb";
 function filmsDB(){
     const me = {};
     const connectionURI = process.env.ATLAS_URI;
-    console.log("Connection: ", connectionURI);
+    //console.log("Connection: ", connectionURI);
     //const MONGODB_URI = process.env.MONGODB_URI;
-    const DB_NAME = "HuskyFilmFest";
+    const DB_NAME = "HuskyFilmFestival";
     const COLLECTION_NAME = "filmSubmissions";
 
   const connect = () => {
     // Connect with client
     const client = new MongoClient(connectionURI);
+    console.log("Connected to Client")
     const films = client.db(DB_NAME).collection(COLLECTION_NAME);
-    console.log("Connected with Mongo");
+    console.log("Connected with Mongo DB");
     return { client, films };
   };
 
@@ -23,7 +24,7 @@ function filmsDB(){
     const {client, films} = connect();
     try {
       const data = await films.find(query).toArray(); 
-      console.log("Got data: ", data);
+      //console.log("Got data : ", data);
       return data; 
     } finally{
       await client.close();
