@@ -9,6 +9,9 @@ export default function FilmForm(){
         evt.preventDefault();
         console.log("On Submit: ", application);
     }
+
+
+
     return(
         <Container>
             <Form onSubmit={onSubmit}>
@@ -32,7 +35,8 @@ export default function FilmForm(){
                      />
                 </Form.Group>
                 
-                <Form.Group className="mb-3" controlId="formBasicType">
+                {/**
+                 * <Form.Group className="mb-3" controlId="formBasicType">
                     <Form.Label>Film Type</Form.Label>
                     <Form.Control 
                         type="text" 
@@ -40,7 +44,12 @@ export default function FilmForm(){
                         value={application.type}
                         onChange = {(e) => setApplication({...application, title: e.target.value})}
                     />
+                    <Form.Text className="text-muted">
+                        Options: Feature or Short
+                    </Form.Text>
                 </Form.Group>
+                 */}
+                
 
                 <Form.Group className="mb-3" controlId="formBasicGenre">
                     <Form.Label>Film Genre</Form.Label>
@@ -50,6 +59,9 @@ export default function FilmForm(){
                         value={application.genre}
                         onChange = {(e) => setApplication({...application, genre: e.target.value})}
                     />
+                    <Form.Text className="text-muted">
+                        Please try to pick one from the following: Action, Drama, Romance, Comedy, Fantasy. If none of those fit, you may enter your own.
+                    </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicLink">

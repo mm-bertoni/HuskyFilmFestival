@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import FilmForm from "../Forms/filmForm";
-import FilmStatAggregator from '../filmStatAggregator';
+import FilmStatAggregator from '../Film/filmStatAggregator';
 import Navbar from '../Navbar';  // Add navbar
 
 export default function FilmSubmissionPage() {

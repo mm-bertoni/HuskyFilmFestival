@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/esm/Container";
 import {useState} from 'react';
 
-import AdminForm from "./adminForm";
+import AdminForm from "../Forms/adminForm";
 
 export default function LoginAdmin(){
 

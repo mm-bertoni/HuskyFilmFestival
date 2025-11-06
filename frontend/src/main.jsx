@@ -10,8 +10,9 @@ import IndexPage from './assets/components/pages/IndexPage';
 import FilmSubmissionPage from './assets/components/pages/filmSubmissionPage';
 import TicketPage from './assets/components/pages/TicketPage';
 import AdminTicketList from './assets/components/pages/AdminTicketList';
+import FilmAdminPage from './assets/components/pages/filmAdminPage';
 
-//import FilmForm from "./components/filmForm";
+
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -22,6 +23,7 @@ root.render(
       <Routes>
         <Route path="/" element={<IndexPage />} />
         <Route path="/filmForm" element={<FilmSubmissionPage />} />
+        <Route path="/filmAdmin" element={<FilmAdminPage />} />
         <Route path="/tickets" element={<TicketPage />} />
         <Route path="/adminTickets" element={<AdminTicketList />} />
       </Routes>
