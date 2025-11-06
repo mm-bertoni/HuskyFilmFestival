@@ -112,5 +112,5 @@ function filmsDB(){
   return me;
 }
 
-const filmsDB = FilmsDB();
-export default filmsDB; 
+const myDB = filmsDB();
+export default myDB; 

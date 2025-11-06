@@ -3,6 +3,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import ticketsRouter from "./server/routes/tickets.js";
 import authRoutes from './server/routes/auth.js';
+import filmRouter from './server/routes/films.js';
+import filmCountRouter from './server/routes/countFilms.js';
+import deleteFilmRouter from './server/routes/deleteFilm.js';
+import updateFilmRouter from './server/routes/updateFilmStatus.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,6 +20,12 @@ app.use(express.json());
 app.use("/api/tickets", ticketsRouter);
 
 app.use('/api/auth', authRoutes);
+
+/* Film Routes */
+app.use("/api/", filmRouter);
+app.use("/api/", filmCountRouter);
+app.use("/api/", updateFilmRouter);
+app.use("/api/", deleteFilmRouter);
 
 // Serve React static files with fallback to index.html
 app.use(express.static(path.join(__dirname, "../frontend/dist"), {
