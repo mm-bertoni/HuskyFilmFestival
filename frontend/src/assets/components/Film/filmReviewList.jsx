@@ -39,13 +39,12 @@ export default function FilmReviewList(){
 
     }
     //useEffect(()=>{})
-    return (
-        <Container>
-            if(films.length === 0){
-                <Container>Loading films...</Container>
-            } else {
-                films.map(renderFilm)
-            }
-        </Container>
-    )
+    if(films.length===0){
+        return(
+            <Container>Loading films...</Container>
+        );
+    } else {
+        return(films.map(renderFilm));
+    }
+    
 }
