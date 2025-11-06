@@ -1,13 +1,13 @@
 import express from "express";
 import FilmsDB from "../FilmsDB.js";
-import { Null } from "@sinclair/typebox";
+
 // Router to get the list of all Films
 const router = express.Router();
 
 router.get("/films", async (req, res)=>{
-    // Try to get the films that are NOT reviewed
+    // Try to get the films that are NOT reviewed later if time
     try {
-        const films = await FilmsDB.getFilms({status:Null});
+        const films = await FilmsDB.getFilms();
         res.json({
             films,
         });

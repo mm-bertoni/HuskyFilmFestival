@@ -1,14 +1,17 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import { MongoClient } from "mongodb";
 function filmsDB(){
     const me = {};
-    //const URI = process.env.MONGODB_URI || "mongodb://localhost:27017";
-    const MONGODB_URI = process.env.MONGODB_URI;
+    const connectionURI = process.env.ATLAS_URI;
+    console.log("Connection: ", connectionURI);
+    //const MONGODB_URI = process.env.MONGODB_URI;
     const DB_NAME = "HuskyFilmFest";
     const COLLECTION_NAME = "filmSubmissions";
 
   const connect = () => {
     // Connect with client
-    const client = new MongoClient(MONGODB_URI);
+    const client = new MongoClient(connectionURI);
     const films = client.db(DB_NAME).collection(COLLECTION_NAME);
     console.log("Connected with Mongo");
     return { client, films };
@@ -20,6 +23,7 @@ function filmsDB(){
     const {client, films} = connect();
     try {
       const data = await films.find(query).toArray(); 
+      console.log("Got data: ", data);
       return data; 
     } finally{
       await client.close();

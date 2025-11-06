@@ -10,13 +10,17 @@ export default function FilmReviewList(){
 
     useEffect(()=>{
         const reloadFilms = async () => {
-        const res = await fetch("/api/films");
+        const res = await fetch(`/api/films`);
+        console.log("What is res gettting", res);
         if(!res.ok){
             console.error("Failed to fetch films", res.status);
             return;
 
         } 
             const data = await res.json();
+            console.log("Fetched Data: ", data);
+            console.log("Type of data: ", typeof data);
+           
             setFilms(data);
         };
         reloadFilms();
@@ -44,7 +48,11 @@ export default function FilmReviewList(){
             <Container>Loading films...</Container>
         );
     } else {
-        return(films.map(renderFilm));
+        return(
+            <Container>
+                {films.map(renderFilm)}
+            </Container>);
+            
     }
     
 }
