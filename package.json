@@ -1,5 +1,6 @@
 {
-  "name": "huskyproductions_margaret",
+
+  "name": "huskyfilmfestival",
   "version": "1.0.0",
   "description": "",
   "main": "backend.js",
@@ -15,12 +16,14 @@
     "url": "git+https://github.com/mm-bertoni/HuskyProductions_Margaret.git"
   },
   "keywords": [],
-  "author": "Margaret Bertoni",
+
+  "author": "Margaret Bertoni, Utkarsh Dev",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mm-bertoni/HuskyProductions_Margaret/issues"
   },
   "homepage": "https://github.com/mm-bertoni/HuskyProductions_Margaret#readme",
+
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
