@@ -54,8 +54,8 @@ Prerequisites:
 5. Frontend :
    - cd frontend
    - npm install
-   - npm start
    - For production build: npm run build (then serve the build folder with a static server)
+   - For dev build: npm run dev
 
 
 
