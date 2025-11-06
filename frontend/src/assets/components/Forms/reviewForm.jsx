@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from "react";
 
-export default function ReviewForm(){
+export default function ReviewForm({director, title, genre, screener, status}){
     const [selected, setSelected] = useState("Not Reviewed"); // Default is hasnt been reviewed.
     // Fix this 
     const handleSelection = (event) =>{
@@ -14,6 +14,22 @@ export default function ReviewForm(){
         evt.preventDefault();
         console.log("Selection made:", selected);
         // Will put comms to Server here
+        fetch(`/api/updateFilmStatus`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                director:director,
+                title:title,
+                genre:genre,
+                screener:screener,
+                status:status
+            })
+            
+        });
+        console.log("Data Posted");
+        
        
     }
 

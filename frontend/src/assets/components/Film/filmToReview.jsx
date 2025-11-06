@@ -31,7 +31,13 @@ export default function FilmToReview({director, title, genre, screener, status})
             </Container>
             <Container>
              
-                <ReviewForm/>
+                <ReviewForm
+                director={director}
+                title={title}
+                genre={genre}
+                screener={screener}
+                status={status}
+                />
                
             </Container>
         </>
