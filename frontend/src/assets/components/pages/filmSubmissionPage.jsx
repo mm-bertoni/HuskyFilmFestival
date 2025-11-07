@@ -32,7 +32,7 @@ export default function FilmSubmissionPage() {
     <>
       <Navbar />
       <Container>
-        <h1>Film Submissions</h1>
+        <h1>Submit Your Film</h1>
         <FilmForm />
       </Container>
       <Container>

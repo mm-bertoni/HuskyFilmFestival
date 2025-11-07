@@ -23,10 +23,10 @@ export default function Navbar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/filmForm">Register Film</Link>
+          <Link to="/filmForm">Submit a Film</Link>
         </li>
         <li>
-          <Link to="/tickets">Buy tickets</Link>
+          <Link to="/tickets">Buy Tickets</Link>
         </li>
       </ul>
     </nav>
