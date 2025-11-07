@@ -38,7 +38,7 @@ export default function FilmReviewList(){
     function renderFilm(film){
         return (
             <Film 
-            key = {film.id}
+            key = {film._id}
             director={film.director}
             title={film.title}
             genre={film.genre}

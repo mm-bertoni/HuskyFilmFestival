@@ -25,6 +25,9 @@ export default function FilmForm(){
                 console.log("Data posted successfully");
                 // clear after submission
                 setApplication({director:"", title:"",genre:"",screener:""});
+                // TEsting
+                window.location.reload(); // Trying to force a reload after submission. 
+               
             }
         } catch (error){
             console.error("Error submitting film:",error);

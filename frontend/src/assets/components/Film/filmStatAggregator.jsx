@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 
-export default function FilmStatAggregator({stat="0", type=""}){
+export default function FilmStatAggregator({ stat="0", type=""}){
+    
     return(
         <Container>
             <h2>Number of Films Submitted - {type}: </h2>

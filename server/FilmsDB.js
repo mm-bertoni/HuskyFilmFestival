@@ -36,7 +36,7 @@ function filmsDB(){
     // Connect to db
     const {client, films} = connect();
     try {
-      const total = films.countDocuments(query); 
+      const total = await films.countDocuments(query); 
       return total;
     } finally{
       await client.close();

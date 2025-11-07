@@ -14,6 +14,8 @@ export default function ReviewForm({director, title, genre, screener, onReload})
         evt.preventDefault();
         console.log("Selection made:", selected);
         // Will put comms to Server here
+        // Check if delete or setting status
+        
         try{
             const res = await fetch(`/api/updateFilmStatus`, {
             method: 'POST',
@@ -42,6 +44,35 @@ export default function ReviewForm({director, title, genre, screener, onReload})
              
     }
 
+    async function handleClick(){
+        
+         try{
+            const res = await fetch(`/api/deleteFilm`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                director,
+                title,
+                genre,
+                screener
+            })
+            
+        });
+         if(res.ok) {
+            console.log("Data Posted Successfully");
+            //console.log("About to call onReload, which is" ,onReload);
+            onReload();  // Now actually call the function
+        } else {
+            console.error("Failed to update films");
+        }
+    } catch (error) {
+        console.error("Error submitting form:", error);
+    }
+    }
+
+
     return(
         <Container>
             <Form onSubmit={onSubmit}>
@@ -54,6 +85,7 @@ export default function ReviewForm({director, title, genre, screener, onReload})
                 </Form.Select>
                 <Button variant="primary" type="submit"> Submit</Button>
             </Form>
+            <Button onClick={handleClick} variant="danger">DELETE SUBMISSION</Button>
         </Container>
 
     );
