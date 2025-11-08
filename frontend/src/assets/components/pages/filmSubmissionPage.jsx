@@ -38,7 +38,7 @@ export default function FilmSubmissionPage() {
       <Container>
         <FilmStatAggregator
           stat={filmCount}
-          type="All"
+          type=""
         />
       </Container>
     </>
