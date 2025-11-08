@@ -26,6 +26,10 @@ export default function Navbar() {
           <Link to="/filmForm" className="navbarLink">Submit a Film</Link>
         </li>
         <li>
+          <Link to="/acceptedFilms" className="navbarLink">Official Selections</Link>
+        </li>
+
+        <li>
           <Link to="/tickets" className="navbarLink">Buy Tickets</Link>
         </li>
       </ul>

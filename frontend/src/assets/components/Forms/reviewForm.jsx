@@ -83,7 +83,7 @@ export default function ReviewForm({director, title, genre, screener, onReload})
                     <option value="Waitlisted">Waitlisted</option>
                     <option value="Rejected">Rejected</option>
                 </Form.Select>
-                <Button variant="primary" type="submit"> Submit</Button>
+                <Button className="submitButton" type="submit"> Submit</Button>
             </Form>
             <Button onClick={handleClick} variant="danger">DELETE SUBMISSION</Button>
         </Container>

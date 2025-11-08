@@ -22,4 +22,21 @@ router.get("/films", async (req, res)=>{
 }
 });
 
+router.get("/acceptedFilms", async (req, res)=>{
+    // Get films that are reviewed
+    try {
+        const films = await FilmsDB.getFilms({
+            status: "Selected"
+        });
+        res.json({
+            films,
+        });
+
+    } catch (error){
+        console.error("Error getting the accepted films");
+        res.status(500).json({error: "Internal Server Error", films: []});
+}
+    }
+);
+
 export default router; 
