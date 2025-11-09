@@ -21,9 +21,10 @@ An admin dashboard allows authorized users to log in, review submissions, and ma
 
 ### Film Submission Form
 ![Film Submission](frontend/src/assets/images/screenshots/filmSubmit.png)
+On the "Submit a Film" tab, submit your film for consideration.
 ### Official Selections Page
 ![Official Selections](frontend/src/assets/images/screenshots/officialSelections.png)
-
+On the "Official Selections" tab, see what films have been accepted.
 ### Ticket Form
 ![Ticket Form](frontend/src/assets/images/screenshots/ticketForm.png)
 
@@ -32,6 +33,13 @@ An admin dashboard allows authorized users to log in, review submissions, and ma
 
 ### Admin Ticket Management
 ![Admin Ticket Management](frontend/src/assets/images/screenshots/adminTicket.png)
+
+## Instructions for Film Admin Mode
+1. Add \filmAdmin to the end of the homepage url.
+2. You will get to a login page: ![Film Admin Page](frontend/src/assets/images/screenshots/filmLogin.png)
+3. The configured user is username: mbertoni.  pw:1234
+4. Upon successful login, you will see all the films available to review: ![Film Review Page](frontend/src/assets/images/screenshots/filmsToReview.png)
+5. If you refresh the page manually, it will log you out
 
 ## Tools used
 - React (frontend) 
@@ -80,12 +88,7 @@ Prerequisites:
    - npm run dev
    - For production build: npm run build (then serve the build folder with a static server)
 
-## Instructions for Film Admin Mode
-1. Add \filmAdmin to the end of the homepage url.
-2. You will get to a login page: ![Film Admin Page](frontend/src/assets/images/screenshots/filmLogin.png)
-3. The configured user is username: mbertoni.  pw:1234
-4. Upon successful login, you will see all the films available to review: ![Film Review Page](frontend/src/assets/images/screenshots/filmsToReview.png)
-5. If you refresh the page manually, it will log you out
+
 
 
 Notes:
