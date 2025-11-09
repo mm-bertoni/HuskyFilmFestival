@@ -1,3 +1,4 @@
+import './styles/Footer.css';
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-6 mt-auto">

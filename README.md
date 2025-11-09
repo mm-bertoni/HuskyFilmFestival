@@ -3,6 +3,10 @@
 ## Authors
 Margaret Bertoni, Utkarsh Dev
 
+## Live Website Link:
+[Husky Film Fest Website](https://huskyfilmfestival.onrender.com/)
+## Database Size at Time of Submission:
+![MongoDB](frontend/src/assets/images/screenshots/database.png)
 ## Class Link
 [WebDev Class](https://johnguerra.co/classes/webDevelopment_online_fall_2025/)
 
@@ -14,12 +18,16 @@ An admin dashboard allows authorized users to log in, review submissions, and ma
 ## Screenshots
 
 ### Home Page
-![Home Page](frontend/src/assets/images/screenshots/home.png)
+
+### Film Submission Form
+![Film Submission](frontend/src/assets/images/screenshots/filmSubmit.png)
+### Official Selections Page
+![Official Selections](frontend/src/assets/images/screenshots/officialSelections.png)
 
 ### Ticket Form
 ![Ticket Form](frontend/src/assets/images/screenshots/ticketForm.png)
 
-### Admin Login
+### Ticket Admin Login
 ![Admin Login](frontend/src/assets/images/screenshots/adminLogin.png)
 
 ### Admin Ticket Management
@@ -32,6 +40,7 @@ An admin dashboard allows authorized users to log in, review submissions, and ma
 - MongoDB (database)
 - nodemon (dev)
 - ESLint, Prettier (code quality/formatting)
+- React-Bootstrap (styling)
 
 ## Project Structure
 - backend.js                 - main Express server (entry)
@@ -40,9 +49,9 @@ An admin dashboard allows authorized users to log in, review submissions, and ma
 - public/ or client/         - frontend assets (Created by React)
 - screenshots/               
 - README.md                  
-(Adjust paths if your repo organizes differently.)
 
-## Instructions to build =
+
+## Instructions to build (Locally)=
 Prerequisites:
 - Node.js (v18+ recommended)
 - npm
@@ -56,19 +65,27 @@ Prerequisites:
    - npm install
 
 3. Configure environment:
-   - Set MONGO_URI (e.g. export MONGO_URI="mongodb://localhost:27017/huskyfilm")
-   - Optionally create a .env file and load it in your backend if implemented.
+   - Create a MongoDB DB and 2 collections (Tickets and filmSubmissions). 
+   - Create a .env file and Set MONGO_URI to the appropriate connection (e.g. export MONGO_URI="mongodb://localhost:27017/huskyfilm")
+   - Upload sample data (data for ![filmSubmissions](data/Sample Film Data.json) linked)
 
 4. Start the backend server (uses nodemon):
+   - npm install
    - npm start
    - By default this runs nodemon and watches backend.js; visit http://localhost:3000 (or the port your backend uses).
 
 5. Frontend :
    - cd frontend
    - npm install
-   - npm start
+   - npm run dev
    - For production build: npm run build (then serve the build folder with a static server)
 
+## Instructions for Film Admin Mode
+1. Add \filmAdmin to the end of the homepage url.
+2. You will get to a login page: ![Film Admin Page](frontend/src/assets/images/screenshots/filmLogin.png)
+3. The configured user is username: mbertoni.  pw:1234
+4. Upon successful login, you will see all the films available to review: ![Film Review Page](frontend/src/assets/images/screenshots/filmsToReview.png)
+5. If you refresh the page manually, it will log you out
 
 
 Notes:
@@ -76,4 +93,8 @@ Notes:
 - Ensure MongoDB is reachable using the MONGO_URI you configured.
 
 ## AI Usage
-This README was created/edited with assistance from GitHub Copilot (GPT-5 mini)
+This README was created/edited with assistance from GitHub Copilot (GPT-5 mini). 
+
+GitHub Copilot was used to help troubleshoot page loading issues (incorrect path configuration) and issues with rendering films - but did not allow it to auto generate/change files (GPT-5 mini).
+
+Claude 
