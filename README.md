@@ -7,6 +7,9 @@ Margaret Bertoni, Utkarsh Dev
 [Husky Film Fest Website](https://huskyfilmfestival.onrender.com/)
 ## Database Size at Time of Submission:
 ![MongoDB](frontend/src/assets/images/screenshots/database.png)
+
+## Design Doc:
+![Design Doc](DesignDoc.pdf)
 ## Class Link
 [WebDev Class](https://johnguerra.co/classes/webDevelopment_online_fall_2025/)
 
@@ -102,3 +105,5 @@ This README was created/edited with assistance from GitHub Copilot (GPT-5 mini).
 GitHub Copilot was used to help troubleshoot page loading issues (incorrect path configuration) and issues with rendering films - but did not allow it to auto generate/change files (GPT-5 mini).
 
 Anthropic's Claude was used to help troubleshoot reloading issues on the Film Review (admin) and Film Submission pages. It was also used to help understand browser error message codes. Claude was used to help troubleshoot during the process of deploying to Render, including understanding Render logs (discovered that there was some file naming issues and an incorrect path). (Sonnet 4.5)
+
+The Husky Logo was generated for Project 2 (re-used on the homepage and navbar) and was originally created with Adobe Generative AI.
