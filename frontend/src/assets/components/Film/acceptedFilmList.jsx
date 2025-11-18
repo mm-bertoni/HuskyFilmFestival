@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 
 import Film from './acceptedFilm';
 
+// After submitting films should not it be showing me films I added here or what I mean it shows same list whenever I refresh it.
+// Here I could be wrong but just wanna make sure how it works
 // TODO : CHANGE TO ONLY ACCEPTED STUFF
 export default function FilmReviewList(){
     const [films, setFilms] = useState([]);
